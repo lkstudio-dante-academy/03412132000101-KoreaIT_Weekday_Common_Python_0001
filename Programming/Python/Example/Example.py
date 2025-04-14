@@ -27,6 +27,11 @@ from _03410122000101_KoreaIT_Weekday_Python_0001.Programming.E01.Scripts.Runtime
 from _03410122000101_KoreaIT_Weekday_Python_0001.Programming.E01.Scripts.Runtime.Example.Example_02 import P_E01Example_02
 from _03410122000101_KoreaIT_Weekday_Python_0001.Programming.E01.Scripts.Runtime.Example.Example_03 import P_E01Example_03
 from _03410122000101_KoreaIT_Weekday_Python_0001.Programming.E01.Scripts.Runtime.Example.Example_04 import P_E01Example_04
+from _03410122000101_KoreaIT_Weekday_Python_0001.Programming.E01.Scripts.Runtime.Example.Example_05 import P_E01Example_05
+from _03410122000101_KoreaIT_Weekday_Python_0001.Programming.E01.Scripts.Runtime.Example.Example_06 import P_E01Example_06
+from _03410122000101_KoreaIT_Weekday_Python_0001.Programming.E01.Scripts.Runtime.Example.Example_07 import P_E01Example_07
+from _03410122000101_KoreaIT_Weekday_Python_0001.Programming.E01.Scripts.Runtime.Example.Example_08 import P_E01Example_08
+from _03410122000101_KoreaIT_Weekday_Python_0001.Programming.E01.Scripts.Runtime.Example.Example_09 import P_E01Example_09
 
 """
 메인 (Main) 모듈이란?
@@ -48,7 +53,12 @@ Python 은 다른 프로그래밍 언어와 달리 단일 행 주석만을 제�
 """
 # 메인 모듈 일 경우
 if __name__ == "__main__":
-	P_E01Example_01.start(sys.argv)
+	# P_E01Example_01.start(sys.argv)
 	# P_E01Example_02.start(sys.argv)
-	# P_E01Example_03.start(sys.argv)
+	P_E01Example_03.start(sys.argv)
 	# P_E01Example_04.start(sys.argv)
+	# P_E01Example_05.start(sys.argv)
+	# P_E01Example_06.start(sys.argv)
+	# P_E01Example_07.start(sys.argv)
+	# P_E01Example_08.start(sys.argv)
+	# P_E01Example_09.start(sys.argv)
