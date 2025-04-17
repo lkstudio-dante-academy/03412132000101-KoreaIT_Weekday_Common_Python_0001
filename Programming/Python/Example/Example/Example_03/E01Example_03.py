@@ -51,6 +51,11 @@ def start(args):
 	nValA = int(oTokens[0])
 	nValB = int(oTokens[1])
 	
+	# 우항이 0 일 경우
+	if nValB == 0:
+		print("우항에 0 을 입력 할 수 없습니다.")
+		return
+	
 	print("=====> 산술 연산자 <=====")
 	print(f"{nValA} + {nValB} = {nValA + nValB}")
 	print(f"{nValA} - {nValB} = {nValA - nValB}")

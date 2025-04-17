@@ -26,4 +26,18 @@ for i in range(0, 10):
 
 # Example 5 (반복문)
 def start(args):
-	pass
+	i = 0
+	nTimes = int(input("횟수 입력 : "))
+	
+	print("=====> while 반복문 <=====")
+	
+	while i < nTimes:
+		print(f"{i + 1} 번째 반복 중 입니다.")
+		i += 1
+		
+	print("\n=====> for 반복문 <=====")
+	
+	for i in range(0, nTimes):
+		print(f"{i + 1} 번째 반복 중 입니다.")
+		i += 1
+		
