@@ -31,7 +31,7 @@ Ex)
 
 # Practice 1
 def start(args):
-	oTokens = input("정수 (2 개) 입력 (2 ~ 9) : ")
+	oTokens = input("정수 (2 개) 입력 (2 ~ 9) : ").split()
 	
 	nVal_Min = int(oTokens[0])
 	nVal_Max = int(oTokens[1])

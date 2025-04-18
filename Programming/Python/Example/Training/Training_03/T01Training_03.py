@@ -30,6 +30,24 @@ def start(args):
 	print(f"정답 : {nAnswer}\n")
 	
 	while True:
-		pass
+		nVal = int(input("정수 입력 : "))
+		
+		# 정답 일 경우
+		if nVal == nAnswer:
+			"""
+			break 키워드란?
+			- 프로그램의 흐름을 가장 가까운 반복문 밖으로 이동시키는 역할을 수행하는 키워드를 의미한다. (+ 즉,
+			break 키워드를 활용하면 반복문을 즉시 종료시키는 것이 가능하다.)
+			"""
+			break
+		
+		# 정답이 클 경우
+		if nAnswer > nVal:
+			print(f"정답은 {nVal} 보다 큽니다.")
+		
+		else:
+			print(f"정답은 {nVal} 보다 작습니다.")
+		
+		print()
 	
 	print("프로그램을 종료합니다.")

@@ -19,6 +19,7 @@ def start(args):
 			i = 1
 			print(f"=====> {nVal} 단 <=====")
 			
+			# 1 ~ 9 까지 곱셈 결과 출력
 			while i < 10:
 				print(f"{nVal} * {i} = {nVal * i}")
 				i += 1
