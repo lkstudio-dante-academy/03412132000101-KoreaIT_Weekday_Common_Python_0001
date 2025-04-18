@@ -35,9 +35,13 @@ from Example.Example_09 import E01Example_09
 from Example.Example_10 import E01Example_10
 
 from Practice.Practice_01 import P01Practice_01
+from Practice.Practice_02 import P01Practice_02
 
 from Training.Training_01 import T01Training_01
 from Training.Training_02 import T01Training_02
+from Training.Training_03 import T01Training_03
+from Training.Training_04 import T01Training_04
+from Training.Training_05 import T01Training_05
 
 """
 메인 (Main) 모듈이란?
@@ -56,12 +60,6 @@ Python 인터프리터에 의해서 기계어로 변환되지 않는다는 것�
 
 Python 은 다른 프로그래밍 언어와 달리 단일 행 주석만을 제공하며 # 기호를 통해 특정 행을 주석 처리하는 것이
 가능하다.
-
-Python 과제 1
-- 구구단 출력하기
-- 2 ~ 9 범위 내의 숫자 중 2 개를 입력 받는다
-- 입력 받는 수가 범위를 벗어났을 경우 가이드 메세지 출력 후 프로그램 종료
-- 범위 내의 수를 입력했을 경우 작은 수부터 큰 수까지 구구단 출력
 """
 # 메인 모듈 일 경우
 if __name__ == "__main__":
@@ -70,13 +68,17 @@ if __name__ == "__main__":
 	# E01Example_03.start(sys.argv)
 	# E01Example_04.start(sys.argv)
 	# E01Example_05.start(sys.argv)
-	# E01Example_06.start(sys.argv)
+	E01Example_06.start(sys.argv)
 	# E01Example_07.start(sys.argv)
 	# E01Example_08.start(sys.argv)
 	# E01Example_09.start(sys.argv)
 	# E01Example_10.start(sys.argv)
 	
 	# P01Practice_01.start(sys.argv)
+	# P01Practice_02.start(sys.argv)
 	
 	# T01Training_01.start(sys.argv)
-	T01Training_02.start(sys.argv)
+	# T01Training_02.start(sys.argv)
+	# T01Training_03.start(sys.argv)
+	# T01Training_04.start(sys.argv)
+	# T01Training_05.start(sys.argv)
