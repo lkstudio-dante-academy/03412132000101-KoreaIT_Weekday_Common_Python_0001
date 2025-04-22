@@ -12,6 +12,9 @@ Python 은 다양한 모듈을 지원하며 이러한 모듈을 활용하면 프
 
 모듈은 프로그래밍 언어에 따라 범위가 다양하며 Python 은 명령문이 작성 된 소스 파일을 모듈이라고 지칭한다. (+ 즉,
 Python 은 소스 파일 단위로 연관 된 기능을 모듈화해서 명령문을 재사용한다는 것을 알 수 있다.)
+
+Python 명령문 시뮬레이션 사이트 URL
+- https://pythontutor.com/visualize.html
 """
 import os
 import sys
@@ -73,10 +76,10 @@ if __name__ == "__main__":
 	# E01Example_07.start(sys.argv)
 	# E01Example_08.start(sys.argv)
 	# E01Example_09.start(sys.argv)
-	# E01Example_10.start(sys.argv)
+	E01Example_10.start(sys.argv)
 	
 	# P01Practice_01.start(sys.argv)
-	P01Practice_02.start(sys.argv)
+	# P01Practice_02.start(sys.argv)
 	# P01Practice_03.start(sys.argv)
 	
 	# T01Training_01.start(sys.argv)
