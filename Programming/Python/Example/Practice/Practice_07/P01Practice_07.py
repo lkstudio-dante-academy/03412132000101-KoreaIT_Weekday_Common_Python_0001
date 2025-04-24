@@ -9,4 +9,101 @@ Python 과제 7
 
 # Practice 7
 def start(args):
-	pass
+	oListMembers = []
+	
+	while True:
+		print("=====> 메뉴 <=====")
+		print("1. 회원 추가")
+		print("2. 회원 제거")
+		print("3. 회원 검색")
+		print("4. 모든 회원 출력")
+		print("5. 종료")
+		
+		nMenu = int(input("\n선택 : "))
+		
+		# 종료를 선택했을 경우
+		if nMenu == 5:
+			break
+			
+		# 회원 추가를 선택했을 경우
+		if nMenu == 1:
+			oName = input("이름 입력 : ")
+			oPNumber = input("전화 번호 입력 : ")
+			
+			nIdx = -1
+			
+			for i in range(0, len(oListMembers)):
+				# 이름이 동일 할 경우
+				if oName == oListMembers[i][0]:
+					nIdx = i
+					break
+			
+			# 회원이 존재 할 경우
+			if nIdx >= 0:
+				print(f"{oName} 은(는) 이미 존재합니다.")
+			
+			else:
+				oMember = [ oName, oPNumber ]
+				oListMembers.append(oMember)
+				
+				print(f"{oName} 을(를) 추가했습니다.")
+		
+		#  회원 제거를 선택했을 경우
+		elif nMenu == 2:
+			oName = input("이름 입력 : ")
+			
+			nIdx = -1
+			
+			for i in range(0, len(oListMembers)):
+				# 이름이 동일 할 경우
+				if oName == oListMembers[i][0]:
+					nIdx = i
+					break
+			
+			# 회원이 존재 할 경우
+			if nIdx >= 0:
+				del oListMembers[nIdx]
+				print(f"{oName} 을(를) 제거했습니다.")
+			
+			else:
+				print(f"{oName} 은(는) 회원이 아닙니다.")
+		
+		# 회원 검색를 선택했을 경우
+		elif nMenu == 3:
+			oName = input("이름 입력 : ")
+			
+			nIdx = -1
+			
+			for i in range(0, len(oListMembers)):
+				# 이름이 동일 할 경우
+				if oName == oListMembers[i][0]:
+					nIdx = i
+					break
+			
+			# 회원이 존재 할 경우
+			if nIdx >= 0:
+				oMember = oListMembers[nIdx]
+				oPNumber = oMember[1]
+				
+				print("=====> 회원 정보 <======")
+				print(f"이름 : {oName}")
+				print(f"전화 번호 : {oPNumber}")
+			
+			else:
+				print(f"{oName} 은(는) 회원이 아닙니다.")
+		
+		# 모든 회원 출력을 선택했을 경우
+		elif nMenu == 4:
+			print("=====> 모든 회원 정보 <=====")
+			
+			for oMember in oListMembers:
+				oName = oMember[0]
+				oPNumber = oMember[1]
+				
+				print(f"이름 : {oName}")
+				print(f"전화 번호 : {oPNumber}\n")
+				
+		print()
+	
+	print("프로그램을 종료합니다.")
+	

@@ -84,7 +84,7 @@ def start(args):
 			oName = input("이름 입력 : ")
 			oPNumber = input("전화 번호 입력 : ")
 			
-			# 동일한 이름의 회원이 존재 할 경우
+			# 회원이 존재 할 경우
 			if oName in oDictMembers:
 				print(f"{oName} 은(는) 이미 존재합니다.")
 			
@@ -96,7 +96,7 @@ def start(args):
 				oDictMembers[oName] = oMember
 				print(f"{oName} 을(를) 추가했습니다.")
 		
-		# 회원 제거 메뉴를 선택했을 경우
+		#  회원 제거를 선택했을 경우
 		elif nMenu == 2:
 			oName = input("이름 입력 : ")
 			
@@ -108,7 +108,7 @@ def start(args):
 			else:
 				print(f"{oName} 은(는) 회원이 아닙니다.")
 		
-		# 회원 검색 메뉴를 선택했을 경우
+		# 회원 검색를 선택했을 경우
 		elif nMenu == 3:
 			oName = input("이름 입력 : ")
 			
@@ -124,7 +124,7 @@ def start(args):
 			else:
 				print(f"{oName} 은(는) 회원이 아닙니다.")
 		
-		# 모든 회원 출력 메뉴를 선택했을 경우
+		# 모든 회원 출력을 선택했을 경우
 		elif nMenu == 4:
 			print("=====> 모든 회원 정보 <=====")
 			
