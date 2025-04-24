@@ -30,13 +30,7 @@ def start(args):
 			oName = input("이름 입력 : ")
 			oPNumber = input("전화 번호 입력 : ")
 			
-			nIdx = -1
-			
-			for i in range(0, len(oListMembers)):
-				# 이름이 동일 할 경우
-				if oName == oListMembers[i][0]:
-					nIdx = i
-					break
+			nIdx = findMember(oListMembers, oName)
 			
 			# 회원이 존재 할 경우
 			if nIdx >= 0:
@@ -51,14 +45,7 @@ def start(args):
 		#  회원 제거를 선택했을 경우
 		elif nMenu == 2:
 			oName = input("이름 입력 : ")
-			
-			nIdx = -1
-			
-			for i in range(0, len(oListMembers)):
-				# 이름이 동일 할 경우
-				if oName == oListMembers[i][0]:
-					nIdx = i
-					break
+			nIdx = findMember(oListMembers, oName)
 			
 			# 회원이 존재 할 경우
 			if nIdx >= 0:
@@ -71,14 +58,7 @@ def start(args):
 		# 회원 검색를 선택했을 경우
 		elif nMenu == 3:
 			oName = input("이름 입력 : ")
-			
-			nIdx = -1
-			
-			for i in range(0, len(oListMembers)):
-				# 이름이 동일 할 경우
-				if oName == oListMembers[i][0]:
-					nIdx = i
-					break
+			nIdx = findMember(oListMembers, oName)
 			
 			# 회원이 존재 할 경우
 			if nIdx >= 0:
@@ -97,13 +77,24 @@ def start(args):
 			print("=====> 모든 회원 정보 <=====")
 			
 			for oMember in oListMembers:
-				oName = oMember[0]
-				oPNumber = oMember[1]
-				
-				print(f"이름 : {oName}")
-				print(f"전화 번호 : {oPNumber}\n")
+				printMember(oMember)
+				print()
 				
 		print()
 	
 	print("프로그램을 종료합니다.")
+	
+# 회원을 탐색한다
+def findMember(a_oListMembers, a_oName):
+	for i in range(0, len(a_oListMembers)):
+		# 회원이 존재 할 경우
+		if a_oName == a_oListMembers[i][0]:
+			return i
+		
+	return -1
+
+# 회원을 출력한다
+def printMember(a_oMember):
+	print(f"이름 : {a_oMember[0]}")
+	print(f"전화 번호 : {a_oMember[1]}")
 	

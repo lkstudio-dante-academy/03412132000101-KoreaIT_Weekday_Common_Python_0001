@@ -16,6 +16,7 @@ Python 은 소스 파일 단위로 연관 된 기능을 모듈화해서 명령�
 Python 명령문 시뮬레이션 사이트 URL
 - https://pythontutor.com/visualize.html
 """
+import os
 import sys
 
 """
@@ -26,7 +27,31 @@ from ~ import 키워드란?
 명시하는 것이 가능하다. (+ 즉, import 키워드는 모듈 수준까지만 명시하는 것이 가능하다.)
 """
 
+from Example.Example_01 import E01Example_01
+from Example.Example_02 import E01Example_02
+from Example.Example_03 import E01Example_03
+from Example.Example_04 import E01Example_04
+from Example.Example_05 import E01Example_05
+from Example.Example_06 import E01Example_06
+from Example.Example_07 import E01Example_07
+from Example.Example_08 import E01Example_08
+from Example.Example_09 import E01Example_09
+from Example.Example_10 import E01Example_10
+
+from Practice.Practice_01 import P01Practice_01
+from Practice.Practice_02 import P01Practice_02
+from Practice.Practice_03 import P01Practice_03
+from Practice.Practice_04 import P01Practice_04
+from Practice.Practice_05 import P01Practice_05
+from Practice.Practice_06 import P01Practice_06
 from Practice.Practice_07 import P01Practice_07
+
+from Training.Training_01 import T01Training_01
+from Training.Training_02 import T01Training_02
+from Training.Training_03 import T01Training_03
+from Training.Training_04 import T01Training_04
+from Training.Training_05 import T01Training_05
+from Training.Training_06 import T01Training_06
 
 """
 메인 (Main) 모듈이란?
@@ -55,7 +80,7 @@ if __name__ == "__main__":
 	# E01Example_05.start(sys.argv)
 	# E01Example_06.start(sys.argv)
 	# E01Example_07.start(sys.argv)
-	# E01Example_08.start(sys.argv)
+	E01Example_08.start(sys.argv)
 	# E01Example_09.start(sys.argv)
 	# E01Example_10.start(sys.argv)
 	
@@ -65,7 +90,7 @@ if __name__ == "__main__":
 	# P01Practice_04.start(sys.argv)
 	# P01Practice_05.start(sys.argv)
 	# P01Practice_06.start(sys.argv)
-	P01Practice_07.start(sys.argv)
+	# P01Practice_07.start(sys.argv)
 	
 	# T01Training_01.start(sys.argv)
 	# T01Training_02.start(sys.argv)
