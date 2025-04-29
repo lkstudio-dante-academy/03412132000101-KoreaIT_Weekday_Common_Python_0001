@@ -10,6 +10,15 @@ import random
 
 단, 재귀 호출은 반드시 호출을 멈추기 위한 명령문을 작성해줘야한다. (+ 즉, 재귀 호출을 멈추기 위한 명령문을
 작성하지 않을 경우 특정 함수가 자기 자신을 무한히 호출하는 무한 루프에 빠진다는 것을 알 수 있다.)
+
+Ex)
+def someMethod():
+	someMethod()
+	
+someMethod()
+
+위와 같이 함수는 자기 자신을 다시 호출하는 것이 가능하지만 재귀 호출을 끝내기 위한 명령문이 없을 경우
+무한 루프에 빠진다는 것을 알 수 있다.
 """
 
 # Example 9 (함수 - 2)
@@ -40,6 +49,7 @@ def start(args):
 	
 	print()
 
+
 # 팩토리얼을 반환한다
 def getFactorial(a_nVal):
 	# 0 이하 일 경우
@@ -48,6 +58,7 @@ def getFactorial(a_nVal):
 	
 	return a_nVal * getFactorial(a_nVal - 1)
 
+
 # 합계를 반환한다
 def getVal_Sum(a_oListValues, a_nIdx):
 	# 범위를 벗어났을 경우
@@ -55,6 +66,7 @@ def getVal_Sum(a_oListValues, a_nIdx):
 		return 0
 	
 	return a_oListValues[a_nIdx] + getVal_Sum(a_oListValues, a_nIdx + 1)
+
 
 # 피보나치 수를 반환한다
 def getNumber_Fibonacci(a_nVal):

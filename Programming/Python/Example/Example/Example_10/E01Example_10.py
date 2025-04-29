@@ -51,9 +51,11 @@ def start(args):
 	print("\n=====> 리스트 요소 - 내림 차순 정렬 후 <=====")
 	printValues(oListValues)
 
+
 # 값을 비교한다
 def compareVal(a_nLhs, a_nRhs):
 	return a_nLhs - a_nRhs
+
 
 # 값을 정렬한다
 def sortValues(a_oListValues, a_oCompare):
@@ -67,6 +69,7 @@ def sortValues(a_oListValues, a_oCompare):
 				continue
 			
 			a_oListValues[j], a_oListValues[j + 1] = nRhs, nLhs
+
 
 # 값을 출력한다
 def printValues(a_oListValues):

@@ -76,6 +76,7 @@ def start(args):
 	nResult = getResult_Calc(nValA, oOperator, nValB)
 	print(f"결과 : {nResult}")
 
+
 # 계산 결과를 반환한다
 def getResult_Calc(a_nValA, a_oOperator, a_nValB):
 	# + 일 경우
@@ -109,6 +110,7 @@ def getResult_Calc(a_nValA, a_oOperator, a_nValB):
 	자료형에 상관 없이 의미 없는 데이터를 통일 시키는 것이 가능하다.)
 	"""
 	return None
+
 
 g_nVal = 0
 

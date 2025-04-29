@@ -34,6 +34,7 @@ def start(args):
 	print(f"\n합계 : {nVal_Sum}")
 	print(f"평균 : {fVal_Average}")
 
+
 # 합계를 반환한다
 def getVal_Sum(a_oListValues):
 	nVal_Sum = 0
@@ -43,9 +44,11 @@ def getVal_Sum(a_oListValues):
 		
 	return nVal_Sum
 
+
 # 평균을 반환한다
 def getVal_Average(a_nVal_Sum, a_nNumValues):
 	return a_nVal_Sum / a_nNumValues
+
 
 # 값을 출력한다
 def printValues(a_oListValues):
