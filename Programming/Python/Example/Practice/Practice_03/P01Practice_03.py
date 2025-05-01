@@ -31,6 +31,7 @@ RESULT_WIN = 1
 RESULT_LOSE = 2
 RESULT_DRAW = 3
 
+
 # Practice 3
 def start(args):
 	nCount_Win = 0
@@ -62,10 +63,10 @@ def start(args):
 		# 패배했을 경우
 		if nResult == RESULT_LOSE:
 			break
-			
+	
 	print(f"전적 : {nCount_Win} 승 {nCount_Draw} 무 1 패")
 	print("프로그램을 종료합니다.")
-	
+
 
 # 결과를 반환한다
 def getResult(a_nSelect, a_nSelect_Computer):

@@ -24,6 +24,7 @@ Ex)
 프로그램을 종료합니다.
 """
 
+
 # Practice 2
 def start(args):
 	oAnswer = []
@@ -40,7 +41,7 @@ def start(args):
 	print("정답 : ")
 	
 	for nVal in oAnswer:
-		print(f"{nVal}, ", end="")
+		print(f"{nVal}, ", end = "")
 	
 	print("\n")
 	
@@ -56,7 +57,7 @@ def start(args):
 			# 숫자가 정답에 없을 경우
 			if nVal not in oAnswer:
 				continue
-				
+			
 			"""
 			index 함수란?
 			- 리스트가 관리하는 데이터의 인덱스 번호를 가져오는 역할을 수행하는 함수를 의미한다. (+ 즉,
@@ -73,7 +74,7 @@ def start(args):
 			
 			else:
 				nNumBalls += 1
-				
+		
 		print(f"결과 : {nNumStrikes} Strike, {nNumBalls} Ball\n")
 		
 		# 4 스트라이크 일 경우
@@ -81,4 +82,3 @@ def start(args):
 			break
 	
 	print("프로그램을 종료합니다.")
-	

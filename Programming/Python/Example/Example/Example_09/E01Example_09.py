@@ -21,6 +21,7 @@ someMethod()
 무한 루프에 빠진다는 것을 알 수 있다.
 """
 
+
 # Example 9 (함수 - 2)
 def start(args):
 	nVal = int(input("정수 입력 : "))
@@ -36,7 +37,7 @@ def start(args):
 	print("\n=====> 리스트 요소 <=====")
 	
 	for nVal in oListValues:
-		print(f"{nVal}, ", end="")
+		print(f"{nVal}, ", end = "")
 	
 	nVal_Sum = getVal_Sum(oListValues, 0)
 	print(f"\n\n합계 : {nVal_Sum}")
@@ -45,7 +46,7 @@ def start(args):
 	
 	for i in range(0, 10):
 		nVal = getNumber_Fibonacci(i)
-		print(f"{nVal}, ", end="")
+		print(f"{nVal}, ", end = "")
 	
 	print()
 

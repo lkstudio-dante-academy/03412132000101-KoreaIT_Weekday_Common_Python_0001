@@ -41,14 +41,15 @@ if 조건문 등을 활용해야한다는 것을 알 수 있다.)
 추가하거나 제거하는 등의 연산이 불가능하다는 것을 알 수 있다.)
 """
 
+
 # Example 6 (컬렉션 - 1)
 def start(args):
 	oTupleValues = (1, 2, 3, 4, 5)
 	print("=====> 튜플 요소 <=====")
 	
 	for nVal in oTupleValues:
-		print(f"{nVal}, ", end="")
-		
+		print(f"{nVal}, ", end = "")
+	
 	print()
 	oListValues = []
 	
@@ -71,12 +72,12 @@ def start(args):
 		특정 데이터를 리스트에 추가하는 것이 가능하다.)
 		"""
 		oListValues.append(nVal)
-		
+	
 	print("\n=====> 리스트 요소 <=====")
 	
 	for nVal in oListValues:
-		print(f"{nVal}, ", end="")
-		
+		print(f"{nVal}, ", end = "")
+	
 	nVal_Insert = int(input("\n\n정수 입력 (삽입) : "))
 	
 	"""
@@ -88,8 +89,8 @@ def start(args):
 	print("\n=====> 리스트 요소 - 삽입 후 <=====")
 	
 	for nVal in oListValues:
-		print(f"{nVal}, ", end="")
-		
+		print(f"{nVal}, ", end = "")
+	
 	nVal_Remove = int(input("\n\n정수 입력 (제거) : "))
 	
 	"""
@@ -125,8 +126,8 @@ def start(args):
 	print("\n=====> 리스트 요소 - 제거 후 <=====")
 	
 	for nVal in oListValues:
-		print(f"{nVal}, ", end="")
-		
+		print(f"{nVal}, ", end = "")
+	
 	nIdx_Remove = int(input("\n\n위치 입력 (제거) : "))
 	
 	"""
@@ -141,5 +142,4 @@ def start(args):
 	print("\n=====> 리스트 요소 - 제거 후 <=====")
 	
 	for nVal in oListValues:
-		print(f"{nVal}, ", end="")
-		
+		print(f"{nVal}, ", end = "")

@@ -23,6 +23,7 @@ Ex)
 학점 : B0
 """
 
+
 # Training 1
 def start(args):
 	nScore = int(input("점수 입력 : "))
@@ -39,24 +40,23 @@ def start(args):
 		# A 학점 일 경우
 		if nScore >= 90:
 			oGrade = "A"
-			
+		
 		# B 학점 일 경우
 		elif nScore >= 80:
 			oGrade = "B"
-			
+		
 		# C 학점 일 경우
 		elif nScore >= 70:
 			oGrade = "C"
-			
+		
 		else:
 			oGrade = "D"
-			
+		
 		# + 학점 일 경우
 		if nScore >= 100 or nScore_Detail >= 7:
 			oGrade_Detail = "+"
-			
+		
 		else:
 			oGrade_Detail = "-" if nScore_Detail <= 3 else "0"
-			
-	print(f"학점 : {oGrade}{oGrade_Detail}")
 	
+	print(f"학점 : {oGrade}{oGrade_Detail}")

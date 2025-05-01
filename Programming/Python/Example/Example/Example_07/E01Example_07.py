@@ -31,6 +31,7 @@ Python 비선형 컬렉션 종류
 제어하는 컬렉션이라는 것을 알 수 있다.)
 """
 
+
 # Example 7 (컬렉션 - 2)
 def start(args):
 	print("=====> 데이터 입력 <=====")
@@ -38,19 +39,19 @@ def start(args):
 	
 	for i in range(0, 10):
 		nVal = random.randrange(1, 10)
-		print(f"{nVal}, ", end="")
+		print(f"{nVal}, ", end = "")
 		
 		"""
 		add 함수를 활용하면 셋에 데이터를 추가하는 것이 가능하다. (+ 즉, add 함수는 내부적으로 데이터의
 		중복 여부를 검사 후 새로운 데이터를 추가한다는 것을 알 수 있다.)
 		"""
 		oSetValues.add(nVal)
-		
+	
 	print("\n\n=====> 셋 요소 <=====")
 	
 	for nVal in oSetValues:
-		print(f"{nVal}, ", end="")
-		
+		print(f"{nVal}, ", end = "")
+	
 	print(f"\n\n개수 : {len(oSetValues)}")
 	oDictValues = dict()
 	
@@ -64,7 +65,7 @@ def start(args):
 		것을 알 수 있다. (+ 즉, 변수와 값이 기존에 존재하던 벨류는 사라진다는 것을 알 수 있다.)
 		"""
 		oDictValues[oKey] = i + 1
-		
+	
 	print("\n=====> 딕셔너리 요소 <=====")
 	
 	"""
@@ -83,8 +84,8 @@ def start(args):
 	위와 같이 for 반복문 내부에서 벨류를 가져오기 위한 별도의 명령문이 필요하다는 것을 알 수 있다.
 	"""
 	for oKey, nVal in oDictValues.items():
-		print(f"{oKey}:{nVal}, ", end="")
-		
+		print(f"{oKey}:{nVal}, ", end = "")
+	
 	oKey_Remove = input("\n\n키 입력 (제거) : ")
 	
 	"""
@@ -96,7 +97,6 @@ def start(args):
 	print("\n=====> 딕셔너리 요소 - 제거 후 <=====")
 	
 	for oKey, nVal in oDictValues.items():
-		print(f"{oKey}:{nVal}, ", end="")
+		print(f"{oKey}:{nVal}, ", end = "")
 	
 	print()
-	

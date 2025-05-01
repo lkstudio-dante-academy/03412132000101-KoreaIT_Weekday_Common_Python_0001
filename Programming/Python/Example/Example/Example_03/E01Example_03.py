@@ -15,6 +15,7 @@ Python 연산자 종류
 - 기타 연산자 (type, 조건 연산자 등등...)
 """
 
+
 # Example 3 (연산자)
 def start(args):
 	"""
@@ -121,4 +122,3 @@ def start(args):
 	print(f"{nValA:b} << 1 = {nValA << 1:b}")
 	print(f"{nValA:b} >> 1 = {nValA >> 1:b}")
 	print(f"~{nValA:b} = {~nValA:b}")
-	

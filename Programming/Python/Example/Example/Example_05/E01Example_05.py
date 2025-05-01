@@ -31,6 +31,7 @@ while 반복문 vs for 반복문
 무한 루프를 작성 할 확률이 떨어진다는 장점이 존재한다.
 """
 
+
 # Example 5 (반복문)
 def start(args):
 	nTimes = int(input("횟수 입력 : "))
@@ -56,21 +57,21 @@ def start(args):
 			반복을 끝내기 위한 명령문이 실행되었는지 주시 할 필요가 있다.
 			"""
 			continue
-			
+		
 		"""
 		print 함수는 문장을 출력하고 나면 자동으로 개행 처리가 되는 특징이 존재하지만 개행 처리를
 		원치 않을 경우 아래와 같이 end 매개 변수에 빈 문자열을 전달하면 된다.
 		"""
-		print(f"{i + 1}, ", end="")
+		print(f"{i + 1}, ", end = "")
 		i += 1
-		
+	
 	print("\n")
 	i = 0
 	
 	while i < nTimes:
 		print(f"{i + 1} 번째 반복 중 입니다.")
 		i += 1
-		
+	
 	print("\n=====> for 반복문 <=====")
 	
 	"""
@@ -93,12 +94,11 @@ def start(args):
 			것을 알 수 있다.)
 			"""
 			continue
-			
-		print(f"{i + 1}, ", end="")
 		
+		print(f"{i + 1}, ", end = "")
+	
 	print("\n")
 	
 	for i in range(0, nTimes):
 		print(f"{i + 1} 번째 반복 중 입니다.")
 		i += 1
-		

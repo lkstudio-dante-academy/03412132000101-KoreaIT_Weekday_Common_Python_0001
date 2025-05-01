@@ -81,6 +81,7 @@ nVal_01 변수와 01_nVal 변수는 변수 이름에 숫자가 들어갔지만 n
 정상적으로 동작하는 반면 01_nVal 변수는 첫 이름이 숫자이기 때문에 컴파일 에러가 발생한다는 것을 알 수 있다.
 """
 
+
 # Example 2 (자료형)
 def start(args):
 	nInt = 10
@@ -106,8 +107,8 @@ def start(args):
 	print(f"정수 ({type(nInt)}) : {nInt}")
 	print(f"실수 ({type(fFloat)}) : {fFloat}")
 	
-	oList = [ 1, 2, 3, 4, 5 ]
-	oDict = { "Key_01": 1, "Key_02": 2, "Key_03": 3 }
+	oList = [1, 2, 3, 4, 5]
+	oDict = {"Key_01": 1, "Key_02": 2, "Key_03": 3}
 	
 	print("\n=====> 자료형 - 컬렉션 <=====")
 	print(f"리스트 ({type(oList)}) : {oList}")
@@ -119,4 +120,3 @@ def start(args):
 	print("\n=====> 자료형 - 기타 <=====")
 	print(f"논리 ({type(bIsBool)}) : {bIsBool}")
 	print(f"문자열 ({type(oStr)}) : {oStr}")
-	

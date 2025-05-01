@@ -21,6 +21,7 @@ Ex)
 평균 : 7.5
 """
 
+
 # Training 4
 def start(args):
 	oListValues = []
@@ -40,7 +41,7 @@ def start(args):
 	print("\n=====> 입력 받은 수 <=====")
 	
 	for nVal in oListValues:
-		print(f"{nVal}, ", end="")
+		print(f"{nVal}, ", end = "")
 	
 	nVal_Sum = 0
 	fVal_Average = 0.0
@@ -55,4 +56,3 @@ def start(args):
 	# 결과 출력
 	print(f"\n\n합계 : {nVal_Sum}")
 	print(f"평균 : {fVal_Average}")
-	

@@ -7,6 +7,7 @@ Python 과제 7
 - 연습 문제 5 번을 중첩 리스트를 사용해서 제작하기
 """
 
+
 # Practice 7
 def start(args):
 	oListMembers = []
@@ -24,7 +25,7 @@ def start(args):
 		# 종료를 선택했을 경우
 		if nMenu == 5:
 			break
-			
+		
 		# 회원 추가를 선택했을 경우
 		if nMenu == 1:
 			oName = input("이름 입력 : ")
@@ -37,7 +38,7 @@ def start(args):
 				print(f"{oName} 은(는) 이미 존재합니다.")
 			
 			else:
-				oMember = [ oName, oPNumber ]
+				oMember = [oName, oPNumber]
 				oListMembers.append(oMember)
 				
 				print(f"{oName} 을(를) 추가했습니다.")
@@ -79,22 +80,23 @@ def start(args):
 			for oMember in oListMembers:
 				printMember(oMember)
 				print()
-				
+		
 		print()
 	
 	print("프로그램을 종료합니다.")
-	
+
+
 # 회원을 탐색한다
 def findMember(a_oListMembers, a_oName):
 	for i in range(0, len(a_oListMembers)):
 		# 회원이 존재 할 경우
 		if a_oName == a_oListMembers[i][0]:
 			return i
-		
+	
 	return -1
+
 
 # 회원을 출력한다
 def printMember(a_oMember):
 	print(f"이름 : {a_oMember[0]}")
 	print(f"전화 번호 : {a_oMember[1]}")
-	

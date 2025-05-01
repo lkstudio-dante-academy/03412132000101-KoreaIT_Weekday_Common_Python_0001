@@ -29,6 +29,7 @@ Ex)
 ...이하 생략
 """
 
+
 # Practice 1
 def start(args):
 	oTokens = input("정수 (2 개) 입력 (2 ~ 9) : ").split()
@@ -39,10 +40,10 @@ def start(args):
 	# 보정이 필요 할 경우
 	if nVal_Min > nVal_Max:
 		nVal_Min, nVal_Max = nVal_Max, nVal_Min
-		
+	
 	bIsValidA = nVal_Min >= 2 and nVal_Min <= 9
 	bIsValidB = nVal_Max >= 2 and nVal_Max <= 9
-
+	
 	# 범위 내의 수를 입력했을 경우
 	if bIsValidA and bIsValidB:
 		for i in range(nVal_Min, nVal_Max + 1):
@@ -50,9 +51,8 @@ def start(args):
 			
 			for j in range(1, 10):
 				print(f"{i} * {j} = {i * j}")
-				
-			print()
 			
+			print()
+	
 	else:
 		print("2 ~ 9 범위 내의 수를 입력하세요.")
-		

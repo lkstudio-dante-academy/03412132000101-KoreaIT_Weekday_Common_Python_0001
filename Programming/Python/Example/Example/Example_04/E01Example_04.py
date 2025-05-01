@@ -28,6 +28,7 @@ Python 은 다른 프로그래밍 언어와 달리 if ~ else 조건문만 지원
 (+ 즉, 동등 비교 조건이 중복 될 경우 명령문 작성에 불편함이 있다는 것을 의미한다.)
 """
 
+
 # Example 4 (조건문)
 def start(args):
 	nScore = int(input("점수 입력 : "))
@@ -38,17 +39,16 @@ def start(args):
 	"""
 	if nScore < 60:
 		print("F 학점입니다.")
-		
+	
 	else:
 		if nScore >= 90:
 			print("A 학점입니다.")
-			
+		
 		elif nScore >= 80:
 			print("B 학점입니다.")
-			
+		
 		elif nScore >= 70:
 			print("C 학점입니다.")
-			
+		
 		else:
 			print("D 학접입니다.")
-			

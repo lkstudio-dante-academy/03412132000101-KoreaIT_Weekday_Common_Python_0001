@@ -61,6 +61,7 @@ Case 2. 회원 일 경우
 프로그램을 종료합니다.
 """
 
+
 # Training 5
 def start(args):
 	oDictMembers = {}
@@ -90,7 +91,7 @@ def start(args):
 			
 			else:
 				oMember = {
-					"Name":oName, "PNumber":oPNumber
+					"Name": oName, "PNumber": oPNumber
 				}
 				
 				oDictMembers[oName] = oMember
@@ -138,4 +139,3 @@ def start(args):
 		print()
 	
 	print("프로그램을 종료합니다.")
-	

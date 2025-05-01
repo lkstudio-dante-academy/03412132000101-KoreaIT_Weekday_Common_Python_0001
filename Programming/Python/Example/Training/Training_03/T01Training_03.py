@@ -24,6 +24,7 @@ Ex)
 프로그램을 종료합니다.
 """
 
+
 # Training 3
 def start(args):
 	nAnswer = random.randrange(1, 100)

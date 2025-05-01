@@ -28,6 +28,7 @@ M i c r o s o f t
 프로그램을 종료합니다.
 """
 
+
 # Practice 6
 def start(args):
 	pass

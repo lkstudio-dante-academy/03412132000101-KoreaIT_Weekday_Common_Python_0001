@@ -12,6 +12,20 @@ Ex)
 결과 : 1101
 """
 
+
 # Training 7
 def start(args):
-	pass
+	nVal = int(input("정수 입력 : "))
+	oBinary = getBinary(nVal)
+	
+	print(f"결과 : {oBinary}")
+
+
+# 2 진수를 반환한다
+def getBinary(a_nVal):
+	# 0 이하 일 경우
+	if a_nVal <= 0:
+		return ""
+	
+	oBinary = getBinary(a_nVal // 2)
+	return oBinary + f"{a_nVal % 2}"

@@ -9,6 +9,7 @@ Python 연습 문제 2
 - 범위 내의 수를 입력했을 경우 입력 한 단부터 9 단까지 구구단 출력
 """
 
+
 # Training 2
 def start(args):
 	nVal = int(input("정수 입력 (2 ~ 9) : "))
@@ -23,10 +24,9 @@ def start(args):
 			while i < 10:
 				print(f"{nVal} * {i} = {nVal * i}")
 				i += 1
-				
+			
 			print()
 			nVal += 1
-			
+	
 	else:
 		print("2 ~ 9 범위 내의 수를 입력하세요.")
-		

@@ -26,6 +26,7 @@ oLambda(10)
 가능하다. (+ 즉, oLambda 변수에는 람다를 참조하는 참조 값이 할당 된 다는 것을 알 수 있다.)
 """
 
+
 # Example 10 (함수 - 3)
 def start(args):
 	oListValues = []
@@ -74,6 +75,6 @@ def sortValues(a_oListValues, a_oCompare):
 # 값을 출력한다
 def printValues(a_oListValues):
 	for nVal in a_oListValues:
-		print(f"{nVal}, ", end="")
+		print(f"{nVal}, ", end = "")
 	
 	print()
