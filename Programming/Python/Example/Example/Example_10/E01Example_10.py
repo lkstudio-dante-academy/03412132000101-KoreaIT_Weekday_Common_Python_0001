@@ -35,7 +35,7 @@ def start(args):
 		nVal = random.randrange(1, 100)
 		oListValues.append(nVal)
 	
-	print("=====> 리스트 요소 <=====")
+	print("=====> 리스트 <=====")
 	printValues(oListValues)
 	
 	"""
@@ -44,12 +44,12 @@ def start(args):
 	"""
 	sortValues(oListValues, compareVal)
 	
-	print("\n=====> 리스트 요소 - 오름 차순 정렬 후 <=====")
+	print("\n=====> 리스트 - 오름 차순 정렬 후 <=====")
 	printValues(oListValues)
 	
 	sortValues(oListValues, lambda a_nLhs, a_nRhs: a_nRhs - a_nLhs)
 	
-	print("\n=====> 리스트 요소 - 내림 차순 정렬 후 <=====")
+	print("\n=====> 리스트 - 내림 차순 정렬 후 <=====")
 	printValues(oListValues)
 	
 	oLambdaA = getLambda(10)

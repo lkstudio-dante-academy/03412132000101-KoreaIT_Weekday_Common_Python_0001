@@ -34,7 +34,7 @@ def start(args):
 		nVal = random.randrange(1, 100)
 		oListValues.append(nVal)
 	
-	print("\n=====> 리스트 요소 <=====")
+	print("\n=====> 리스트 <=====")
 	
 	for nVal in oListValues:
 		print(f"{nVal}, ", end = "")

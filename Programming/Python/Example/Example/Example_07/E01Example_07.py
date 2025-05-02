@@ -47,7 +47,7 @@ def start(args):
 		"""
 		oSetValues.add(nVal)
 	
-	print("\n\n=====> 셋 요소 <=====")
+	print("\n\n=====> 셋 <=====")
 	
 	for nVal in oSetValues:
 		print(f"{nVal}, ", end = "")
@@ -66,7 +66,7 @@ def start(args):
 		"""
 		oDictValues[oKey] = i + 1
 	
-	print("\n=====> 딕셔너리 요소 <=====")
+	print("\n=====> 딕셔너리 <=====")
 	
 	"""
 	items 함수를 활용하면 키/벨류 쌍으로 이루어진 데이터를 가져오는 것이 가능하다. (+ 즉, items 함수는
@@ -94,7 +94,7 @@ def start(args):
 	"""
 	del oDictValues[oKey_Remove]
 	
-	print("\n=====> 딕셔너리 요소 - 제거 후 <=====")
+	print("\n=====> 딕셔너리 - 제거 후 <=====")
 	
 	for oKey, nVal in oDictValues.items():
 		print(f"{oKey}:{nVal}, ", end = "")

@@ -45,7 +45,7 @@ if 조건문 등을 활용해야한다는 것을 알 수 있다.)
 # Example 6 (컬렉션 - 1)
 def start(args):
 	oTupleValues = (1, 2, 3, 4, 5)
-	print("=====> 튜플 요소 <=====")
+	print("=====> 튜플 <=====")
 	
 	for nVal in oTupleValues:
 		print(f"{nVal}, ", end = "")
@@ -73,7 +73,7 @@ def start(args):
 		"""
 		oListValues.append(nVal)
 	
-	print("\n=====> 리스트 요소 <=====")
+	print("\n=====> 리스트 <=====")
 	
 	for nVal in oListValues:
 		print(f"{nVal}, ", end = "")
@@ -86,7 +86,7 @@ def start(args):
 	"""
 	oListValues.insert(0, nVal_Insert)
 	
-	print("\n=====> 리스트 요소 - 삽입 후 <=====")
+	print("\n=====> 리스트 - 삽입 후 <=====")
 	
 	for nVal in oListValues:
 		print(f"{nVal}, ", end = "")
@@ -123,7 +123,7 @@ def start(args):
 	"""
 	oListValues.remove(nVal_Remove)
 	
-	print("\n=====> 리스트 요소 - 제거 후 <=====")
+	print("\n=====> 리스트 - 제거 후 <=====")
 	
 	for nVal in oListValues:
 		print(f"{nVal}, ", end = "")
@@ -139,7 +139,7 @@ def start(args):
 	"""
 	del oListValues[nIdx_Remove]
 	
-	print("\n=====> 리스트 요소 - 제거 후 <=====")
+	print("\n=====> 리스트 - 제거 후 <=====")
 	
 	for nVal in oListValues:
 		print(f"{nVal}, ", end = "")
