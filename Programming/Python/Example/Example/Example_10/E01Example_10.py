@@ -51,6 +51,25 @@ def start(args):
 	
 	print("\n=====> 리스트 요소 - 내림 차순 정렬 후 <=====")
 	printValues(oListValues)
+	
+	oLambdaA = getLambda(10)
+	oLambdaB = getLambda(20)
+	
+	print("\n=====> 람다 호출 <=====")
+	oLambdaA()
+	oLambdaB()
+
+
+# 람다를 반환한다
+def getLambda(a_nVal):
+	"""
+	람다 내부에서는 람다를 감싸고 있는 외부 지역에 존재하는 변수에 자유롭게 접근하는 것이 가능하다. (+ 즉,
+	외부 지역에 선언 된 변수의 생명 주기와 상관 없이 접근이 가능하다는 것을 알 수 있다.)
+	
+	이는 람다 내부에 외부 지역에 선언 된 변수와 동일한 사본 변수가 존재하기 때문이다. (+ 즉, 외부 지역에
+	선언 된 변수와 동일한 이름과 데이터를 지니고 있는 변수가 람다 내부에 선언 된다는 것을 알 수 있다.)
+	"""
+	return lambda: print(f"정수 : {a_nVal}")
 
 
 # 값을 비교한다

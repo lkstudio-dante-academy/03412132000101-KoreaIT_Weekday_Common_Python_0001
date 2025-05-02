@@ -131,3 +131,11 @@ def start(args):
 		"""
 		for oStr in oRStream.readlines():
 			print(oStr, end = "")
+	
+	with open("P_E01Example_11_02.txt", "wt") as oWStream:
+		for i in range(0, 10):
+			oWStream.write(f"{i + 1}\n")
+	
+	with open("P_E01Example_11_02.txt", "rt") as oRStream:
+		for oStr in oRStream.readlines():
+			print(oStr, end = "")

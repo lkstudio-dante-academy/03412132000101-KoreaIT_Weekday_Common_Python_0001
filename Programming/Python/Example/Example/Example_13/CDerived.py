@@ -22,9 +22,8 @@ class CDerived(CBase):
 		"""
 		super().__init__(a_nVal, a_fVal)
 		self.m_oStr = a_oStr
-		
+	
 	# 정보를 출력한다
 	def showInfo(self):
 		super().showInfo()
 		print(f"문자열 : {self.m_oStr}")
-		

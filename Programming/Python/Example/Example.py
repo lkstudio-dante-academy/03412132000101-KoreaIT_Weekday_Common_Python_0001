@@ -46,6 +46,7 @@ from Practice.Practice_04 import P01Practice_04
 from Practice.Practice_05 import P01Practice_05
 from Practice.Practice_06 import P01Practice_06
 from Practice.Practice_07 import P01Practice_07
+from Practice.Practice_08 import P01Practice_08
 
 from Training.Training_01 import T01Training_01
 from Training.Training_02 import T01Training_02
@@ -56,7 +57,8 @@ from Training.Training_06 import T01Training_06
 from Training.Training_07 import T01Training_07
 from Training.Training_08 import T01Training_08
 from Training.Training_09 import T01Training_09
-
+from Training.Training_10 import T01Training_10
+from Training.Training_11 import T01Training_11
 
 """
 메인 (Main) 모듈이란?
@@ -88,9 +90,9 @@ if __name__ == "__main__":
 	# E01Example_08.start(sys.argv)
 	# E01Example_09.start(sys.argv)
 	# E01Example_10.start(sys.argv)
-	# E01Example_11.start(sys.argv)
+	E01Example_11.start(sys.argv)
 	# E01Example_12.start(sys.argv)
-	E01Example_13.start(sys.argv)
+	# E01Example_13.start(sys.argv)
 	
 	# P01Practice_01.start(sys.argv)
 	# P01Practice_02.start(sys.argv)
@@ -99,6 +101,7 @@ if __name__ == "__main__":
 	# P01Practice_05.start(sys.argv)
 	# P01Practice_06.start(sys.argv)
 	# P01Practice_07.start(sys.argv)
+	# P01Practice_08.start(sys.argv)
 	
 	# T01Training_01.start(sys.argv)
 	# T01Training_02.start(sys.argv)
@@ -109,3 +112,5 @@ if __name__ == "__main__":
 	# T01Training_07.start(sys.argv)
 	# T01Training_08.start(sys.argv)
 	# T01Training_09.start(sys.argv)
+	# T01Training_10.start(sys.argv)
+	# T01Training_11.start(sys.argv)

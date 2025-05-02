@@ -80,4 +80,3 @@ def start(args):
 	
 	print("\n=====> 캐릭터 - B <=====")
 	oCharacterB.showInfo()
-	
