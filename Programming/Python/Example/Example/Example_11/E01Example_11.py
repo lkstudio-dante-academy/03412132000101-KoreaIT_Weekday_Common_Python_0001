@@ -115,6 +115,8 @@ def start(args):
 	close 와 같은 메서드를 명시적으로 호출하지 않아도 된다.)
 	"""
 	with open("P_E01Example_11_01.txt", "rt") as oRStream:
+		print("=====> 텍스트 <=====")
+		
 		"""
 		readlines 함수를 활용하면 파일에 존재하는 데이터를 라인 별로 모두 읽어들이는 것이 가능하다.
 		
@@ -137,5 +139,8 @@ def start(args):
 			oWStream.write(f"{i + 1}\n")
 	
 	with open("P_E01Example_11_02.txt", "rt") as oRStream:
+		print("\n=====> 바이너리 <=====")
+		
 		for oStr in oRStream.readlines():
-			print(oStr, end = "")
+			nVal = int(oStr.removesuffix("\n"))
+			print(f"{nVal}, ", end = "")
