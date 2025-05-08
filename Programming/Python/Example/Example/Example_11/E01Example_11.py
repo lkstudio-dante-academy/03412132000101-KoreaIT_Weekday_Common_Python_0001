@@ -74,13 +74,12 @@ w 모드 (Write Mode) vs a 모드 (Append Mode)
 제외하면 w 모드와 a 모드는 동일하다는 것을 알 수 있다.)
 
 Python 파일 개방 모드 종류
-- b : 이진 모드
 - t : 텍스트 모드
+- b : 바이너리 모드
 
-b 모드 (Binary Mode) vs t 모드 (Text Mode)
-- b 모드는 데이터를 입/출력 하는 과정에서 개행 문자 (\n) 에 대한 보정을 별로로 하지 않는 반면 t 모드는
-개행 문자를 운영 체제에 맞게 보정하는 차이점이 존재한다. (+ 즉, t 모드는 데이터가 변형 될 수 있다는 것을
-알 수 있다.)
+t 모드 (Text Mode) vs b 모드 (Binary Mode)
+- t 모드는 데이터를 입/출력 하는 과정에서 개행 문자 (\n) 를 운영 체제에 맞게 보정하는 반면 b 모드는
+개행 문자를 별도로 보정하지 않는 차이점이 존재한다. (+ 즉, t 모드는 데이터가 변형 될 수 있다는 것을 의미한다.)
 
 운영 체제마다 개행을 처리하는 방식이 다르기 때문에 t 모드는 데이터를 입력하는 과정에서 \n <-> \r\n 과 같이
 개행 문자에 보정이 발생한다는 특징이 존재한다.
@@ -91,6 +90,9 @@ b 모드 (Binary Mode) vs t 모드 (Text Mode)
 
 # Example 11 (파일 시스템)
 def start(args):
+	oPath_FileA = "P_E01Example_11_01.txt"
+	oPath_FileB = "P_E01Example_11_02.bin"
+	
 	"""
 	쓰기용으로 스트림을 개방 할 경우 파일을 생성해준다.
 	
@@ -98,7 +100,7 @@ def start(args):
 	파일을 대상으로 스트림을 생성하고 싶다면 open 함수를 호출하기 전에 반드시 폴더의 존재 여부를 판단해야한다.
 	(+ 즉, 경로 상에 명시 된 폴더가 존재하지 않을 경우 내부적으로 예외가 발생한다는 것을 알 수 있다.)
 	"""
-	oWStream = open("P_E01Example_11_01.txt", "wt")
+	oWStream = open(oPath_FileA, "wt")
 	
 	for i in range(0, 10):
 		oWStream.write("Hello, World!\n")
@@ -114,7 +116,7 @@ def start(args):
 	- 스트림과 같이 리소스를 안전하게 해제 할 수 있는 키워드를 의미한다. (+ 즉, with ~ as 키워드를 활용하면
 	close 와 같은 메서드를 명시적으로 호출하지 않아도 된다.)
 	"""
-	with open("P_E01Example_11_01.txt", "rt") as oRStream:
+	with open(oPath_FileA, "rt") as oRStream:
 		print("=====> 텍스트 <=====")
 		
 		"""
@@ -133,14 +135,29 @@ def start(args):
 		"""
 		for oStr in oRStream.readlines():
 			print(oStr, end = "")
-	
-	with open("P_E01Example_11_02.txt", "wt") as oWStream:
+			
+	with open(oPath_FileB, "wb") as oWStream:
 		for i in range(0, 10):
-			oWStream.write(f"{i + 1}\n")
+			nVal = i + 1
+			
+			"""
+			바이너리 모드는 바이트 단위로 데이터를 입/출력 하기 때문에 정수와 같은 데이터를 직접적으로
+			사용하는 것이 불가능하다. (+ 즉, 정수 등의 데이터를 바이트 단위 데이터로 변경해줘야한다는 것을
+			알 수 있다.)
+			"""
+			oWStream.write(nVal.to_bytes(4))
 	
-	with open("P_E01Example_11_02.txt", "rt") as oRStream:
+	with open(oPath_FileB, "rb") as oRStream:
 		print("\n=====> 바이너리 <=====")
 		
-		for oStr in oRStream.readlines():
-			nVal = int(oStr.removesuffix("\n"))
+		while True:
+			oBytes = oRStream.read(4)
+			
+			# 읽어 들 일 데이터가 없을 경우
+			if not oBytes:
+				break
+				
+			nVal = int.from_bytes(oBytes)
 			print(f"{nVal}, ", end = "")
+			
+		print()
