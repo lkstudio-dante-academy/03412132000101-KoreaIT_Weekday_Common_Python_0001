@@ -19,4 +19,22 @@ Ex)
 
 # Practice 4
 def start(args):
-	pass
+	oListStrings_Digit = [
+		"*****     * ***** ***** *   * ***** ***** ***** ***** ***** ",
+		"*   *     *     *     * *   * *     *         * *   * *   * ",
+		"*   *     * ***** ***** ***** ***** *****     * ***** ***** ",
+		"*   *     * *         *     *     * *   *     * *   *     * ",
+		"*****     * ***** *****     * ***** *****     * ***** ***** "
+	]
+	
+	oStr_Val = input("정수 입력 : ")
+	
+	for oStr_Digit in oListStrings_Digit:
+		for oVal in oStr_Val:
+			nVal = int(oVal)
+			nIdx_Start = nVal * 6
+			
+			for i in range(0, 6):
+				print(f"{oStr_Digit[nIdx_Start + i]}", end = "")
+		
+		print()
