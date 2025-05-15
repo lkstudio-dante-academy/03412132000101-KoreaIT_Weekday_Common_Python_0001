@@ -6,12 +6,6 @@ import 키워드란?
 Python 은 다양한 모듈을 지원하며 이러한 모듈을 활용하면 프로그램을 좀 더 수월하게 제작하는 것이 가능하다. (+ 즉,
 이미 완성 된 기능을 재활용함으로서 작성해야되는 명령문을 줄이는 것이 가능하다.)
 
-from ~ import 키워드란?
-- import 키워드와 마찬가지로 특정 모듈을 가져오는 역할을 수행하는 키워드를 의미한다.
-
-단, from ~ import 키워드는 import 키워드와 달리 특정 모듈에 하위에 있는 기능 (+ Ex. 함수 등등...) 수준까지
-명시하는 것이 가능하다. (+ 즉, import 키워드는 모듈 수준까지만 명시하는 것이 가능하다.)
-
 모듈 (Module) 이란?
 - 재사용 가능한 명령문을 기능적으로 분리한 단위를 의미한다. (+ 즉, 모듈을 활용하면 명령문을 재사용해서
 특정 프로그램을 빠르게 제작하는 것이 가능하다.)
@@ -25,6 +19,13 @@ Python 명령문 시뮬레이션 사이트 URL
 import os
 import sys
 
+"""
+from ~ import 키워드란?
+- import 키워드와 마찬가지로 특정 모듈을 가져오는 역할을 수행하는 키워드를 의미한다.
+
+단, from ~ import 키워드는 import 키워드와 달리 특정 모듈에 하위에 있는 기능 (+ Ex. 함수 등등...) 수준까지
+명시하는 것이 가능하다. (+ 즉, import 키워드는 모듈 수준까지만 명시하는 것이 가능하다.)
+"""
 from Example.Example_01 import E01Example_01
 from Example.Example_02 import E01Example_02
 from Example.Example_03 import E01Example_03
@@ -95,7 +96,7 @@ if __name__ == "__main__":
 	# E01Example_11.start(sys.argv)
 	# E01Example_12.start(sys.argv)
 	# E01Example_13.start(sys.argv)
-	E01Example_14.start(sys.argv)
+	# E01Example_14.start(sys.argv)
 	# E01Example_15.start(sys.argv)
 	
 	# P01Practice_01.start(sys.argv)
@@ -117,4 +118,4 @@ if __name__ == "__main__":
 	# T01Training_08.start(sys.argv)
 	# T01Training_09.start(sys.argv)
 	# T01Training_10.start(sys.argv)
-	# T01Training_11.start(sys.argv)
+	T01Training_11.start(sys.argv)

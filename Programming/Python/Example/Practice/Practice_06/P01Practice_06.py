@@ -1,6 +1,8 @@
 import os
 import sys
 
+import random
+
 """
 Python 과제 6
 - 행맨 게임 제작하기
@@ -31,4 +33,60 @@ M i c r o s o f t
 
 # Practice 6
 def start(args):
-	pass
+	oAnswer = getAnswer()
+	print(f"정답 : {oAnswer}\n")
+	
+	oListLetters = []
+	setupWord(oAnswer, oListLetters)
+	
+	while True:
+		printWord(oListLetters)
+		oLetter = input("문자 입력 : ")
+		
+		for i in range(0, len(oAnswer)):
+			# 문자가 존재 할 경우
+			if oLetter.upper() == oAnswer[i].upper():
+				oListLetters[i] = oAnswer[i]
+		
+		print()
+		
+		# 정답 일 경우
+		if "_" not in oListLetters:
+			break
+		
+	printWord(oListLetters)
+	print("프로그램을 종료합니다.")
+	
+	
+# 정답을 반환한다
+def getAnswer():
+	oListAnswers = [
+		"Apple",
+		"Google",
+		"Samsung",
+		"Microsoft"
+	]
+	
+	nIdx = random.randrange(0, len(oListAnswers))
+	return oListAnswers[nIdx]
+
+
+# 단어를 설정한다
+def setupWord(a_oAnswer, a_oOutListLetters):
+	for i in range(0, len(a_oAnswer)):
+		a_oOutListLetters.append("_")
+		
+	nNumLetters = int(len(a_oAnswer) * 0.3)
+	
+	for i in range(0, nNumLetters):
+		nIdx = random.randrange(0, len(a_oAnswer))
+		a_oOutListLetters[nIdx] = a_oAnswer[nIdx]
+		
+		
+# 단어를 출력한다
+def printWord(a_oListLetters):
+	for oLetter in a_oListLetters:
+		print(f"{oLetter} ", end = "")
+		
+	print()
+	

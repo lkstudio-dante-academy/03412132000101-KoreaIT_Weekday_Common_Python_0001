@@ -2,7 +2,6 @@ import os
 import sys
 
 import pickle
-from Training.Training_10.CMember import CMember
 
 
 # 회원 관리자
