@@ -41,6 +41,9 @@ from Example.Example_12 import E01Example_12
 from Example.Example_13 import E01Example_13
 from Example.Example_14 import E01Example_14
 from Example.Example_15 import E01Example_15
+from Example.Example_16 import E01Example_16
+from Example.Example_17 import E01Example_17
+from Example.Example_18 import E01Example_18
 
 from Practice.Practice_01 import P01Practice_01
 from Practice.Practice_02 import P01Practice_02
@@ -98,6 +101,9 @@ if __name__ == "__main__":
 	# E01Example_13.start(sys.argv)
 	# E01Example_14.start(sys.argv)
 	# E01Example_15.start(sys.argv)
+	# E01Example_16.start(sys.argv)
+	# E01Example_17.start(sys.argv)
+	# E01Example_18.start(sys.argv)
 	
 	# P01Practice_01.start(sys.argv)
 	# P01Practice_02.start(sys.argv)
@@ -106,7 +112,7 @@ if __name__ == "__main__":
 	# P01Practice_05.start(sys.argv)
 	# P01Practice_06.start(sys.argv)
 	# P01Practice_07.start(sys.argv)
-	# P01Practice_08.start(sys.argv)
+	P01Practice_08.start(sys.argv)
 	
 	# T01Training_01.start(sys.argv)
 	# T01Training_02.start(sys.argv)
@@ -118,4 +124,4 @@ if __name__ == "__main__":
 	# T01Training_08.start(sys.argv)
 	# T01Training_09.start(sys.argv)
 	# T01Training_10.start(sys.argv)
-	T01Training_11.start(sys.argv)
+	# T01Training_11.start(sys.argv)

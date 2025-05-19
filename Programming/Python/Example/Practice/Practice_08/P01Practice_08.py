@@ -42,7 +42,7 @@ def start(args):
 		oPath_Dir = os.path.dirname(oPath_Copy)
 		
 		# 사본 파일 경로에 디렉토리가 없을 경우
-		if not os.path.exists(oPath_Dir):
+		if oPath_Dir and not os.path.exists(oPath_Dir):
 			os.makedirs(oPath_Dir)
 		
 		with open(oPath_Copy, "wb") as oWStream:
