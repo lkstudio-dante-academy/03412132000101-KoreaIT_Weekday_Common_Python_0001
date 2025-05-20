@@ -1,6 +1,9 @@
 import os
 import sys
 
+from PyQt5.QtWidgets import QApplication
+from Example.Example_15.CWnd_Main import CWnd_Main
+
 """
 패키지 (Package) 란?
 - 모듈의 집합을 의미한다. (+ 즉, 패키지를 활용하면 다양한 기능을 특정 그룹으로 분류 시켜서 관리하는 것이
@@ -22,4 +25,9 @@ __init__.py 파일은 디렉토리를 패키지로 인식 시키는 역할 이�
 
 # Example 15 (패키지)
 def start(args):
-	pass
+	oApp = QApplication(args)
+	
+	oCanvas = CWnd_Main()
+	oCanvas.show()
+	
+	sys.exit(oApp.exec_())

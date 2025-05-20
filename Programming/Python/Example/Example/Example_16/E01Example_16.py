@@ -54,7 +54,7 @@ def start(args):
 	처리하는 것이 가능하다.)
 	"""
 	with sqlite3.connect("P_E01Example_16_01.db") as oConnection:
-		oSQL_CreateTable = "CREATE TABLE IF NOT EXISTS MemberTable(Name TEXT PRIMARY KEY, PNumber TEXT)"
+		oSQL_CreateTable = "CREATE TABLE MemberTable(Name TEXT PRIMARY KEY, PNumber TEXT)"
 		
 		"""
 		Cursor 란?
@@ -71,7 +71,7 @@ def start(args):
 		"""
 		oCursor.execute(oSQL_CreateTable)
 		
-		oSQL_Insert = "INSERT OR IGNORE INTO MemberTable(Name, PNumber) VALUES(?, ?)"
+		oSQL_Insert = "INSERT INTO MemberTable(Name, PNumber) VALUES(?, ?)"
 		
 		oCursor.execute(oSQL_Insert, [ "회원 A", "1234" ])
 		oCursor.execute(oSQL_Insert, [ "회원 B", "1234" ])
