@@ -1,8 +1,7 @@
 import os
 import sys
 
-from urllib import request
-from bs4 import BeautifulSoup
+import threading
 
 """
 웹 크롤링이란?
@@ -12,5 +11,17 @@ from bs4 import BeautifulSoup
 
 # Example 18 (웹 크롤링 - 1)
 def start(args):
-	pass
+	oThreadA = threading.Thread(target = main_ThreadA)
+	oThreadB = threading.Thread(target = main_ThreadA)
+	
+	oThreadA.start()
+	oThreadB.start()
+	
+	# oThreadA.join()
+	
+	
+# 쓰레드 A 메인 함수
+def main_ThreadA():
+	for i in range(0, 100000):
+		print(f"{i + 1}")
 		

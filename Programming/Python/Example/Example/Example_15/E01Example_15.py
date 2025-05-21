@@ -26,8 +26,7 @@ __init__.py 파일은 디렉토리를 패키지로 인식 시키는 역할 이�
 # Example 15 (패키지)
 def start(args):
 	oApp = QApplication(args)
-	
 	oCanvas = CWnd_Main()
-	oCanvas.show()
 	
+	oCanvas.show()
 	sys.exit(oApp.exec_())
