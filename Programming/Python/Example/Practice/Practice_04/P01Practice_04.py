@@ -29,12 +29,19 @@ def start(args):
 	
 	oStr_Val = input("정수 입력 : ")
 	
-	for oStr_Digit in oListStrings_Digit:
-		for oVal in oStr_Val:
-			nVal = int(oVal)
-			nIdx_Start = nVal * 6
-			
-			for i in range(0, 6):
-				print(f"{oStr_Digit[nIdx_Start + i]}", end = "")
+	try:
+		nVal = int(oStr_Val)
 		
-		print()
+		for oStr_Digit in oListStrings_Digit:
+			for oVal in oStr_Val:
+				nVal = int(oVal)
+				nIdx_Start = nVal * 6
+				
+				for i in range(0, 6):
+					print(f"{oStr_Digit[nIdx_Start + i]}", end = "")
+			
+			print()
+			
+	except:
+		print("숫자를 입력해주세요.")
+		
