@@ -3,6 +3,10 @@ import sys
 
 import random
 
+from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime
+from multiprocessing import Pool
+
 """
 Python 연습 문제 13
 - 쓰레드 및 프로세스를 활용해서 합계 계산하기
@@ -17,7 +21,7 @@ def start(args):
 	리스트를 생성과 동시에 데이터를 추가하는 것이 가능하다.)
 	
 	Ex)
-	oListValues = [i for i in range(0, 10)]			<- [ 1, 2, 3, ..., 9 ] 리스트 생성 및 할당
+	oListValues = [i for i in range(0, 10)]			<- [ 0, 1, 2, ..., 9 ] 리스트 생성 및 할당
 	
 	위와 같이 리스트 컴프리헨션을 활용하면 리스트를 생성과 동시에 데이터를 추가함으로서 빠르게 리스트를
 	생생하는 것이 가능하다. (+ 즉, 리스트를 생성 후 데이터를 추가하는 것 보다 속도가 빠르다는 것을 의미한다.)
@@ -28,6 +32,17 @@ def start(args):
 	
 	nNumThreads = os.cpu_count() * 2
 	nNumThreads += 1 if nNumValues * nNumThreads < len(oListValues) else 0
+	
+	nVal_Sum = 0
+	oTime_Start = datetime.now()
+	
+	for nVal in oListValues:
+		nVal_Sum += nVal
+	
+	fTime_Delta = (datetime.now() - oTime_Start).total_seconds()
+	
+	print("=====> 메인 쓰레드 <=====")
+	print(f"합계 : {nVal_Sum} ({fTime_Delta} sec)")
 	
 	"""
 	슬라이스 (Slice) 란?
@@ -49,3 +64,40 @@ def start(args):
 	"""
 	oContainerListValues = [oListValues[nNumValues * i:nNumValues * (i + 1)] for i in range(0, nNumThreads)]
 	
+	oTime_Start = datetime.now()
+	nVal_Sum = 0
+	
+	with ThreadPoolExecutor(nNumThreads) as oExecutor:
+		oListResults = oExecutor.map(getVal_Sum, oContainerListValues)
+		
+		for nVal in oListResults:
+			nVal_Sum += nVal
+	
+	fTime_Delta = (datetime.now() - oTime_Start).total_seconds()
+	
+	print("\n=====> 멀티 쓰레드 <=====")
+	print(f"합계 : {nVal_Sum} ({fTime_Delta} sec)")
+	
+	nVal_Sum = 0
+	oTime_Start = datetime.now()
+	
+	with Pool(nNumThreads) as oPool:
+		oListResults = oPool.map(getVal_Sum, oContainerListValues)
+		
+		for nVal in oListResults:
+			nVal_Sum += nVal
+	
+	fTime_Delta = (datetime.now() - oTime_Start).total_seconds()
+	
+	print("\n=====> 멀티 프로세스 <=====")
+	print(f"합계 : {nVal_Sum} ({fTime_Delta} sec)")
+
+
+# 합계를 반환한다
+def getVal_Sum(a_oListValues):
+	nVal_Sum = 0
+	
+	for nVal in a_oListValues:
+		nVal_Sum += nVal
+	
+	return nVal_Sum
