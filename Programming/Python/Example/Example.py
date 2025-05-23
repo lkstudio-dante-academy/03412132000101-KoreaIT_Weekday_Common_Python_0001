@@ -66,6 +66,7 @@ from Training.Training_09 import T01Training_09
 from Training.Training_10 import T01Training_10
 from Training.Training_11 import T01Training_11
 from Training.Training_12 import T01Training_12
+from Training.Training_13 import T01Training_13
 
 """
 메인 (Main) 모듈이란?
@@ -104,7 +105,7 @@ if __name__ == "__main__":
 	# E01Example_15.start(sys.argv)
 	# E01Example_16.start(sys.argv)
 	# E01Example_17.start(sys.argv)
-	# E01Example_18.start(sys.argv)
+	E01Example_18.start(sys.argv)
 	
 	# P01Practice_01.start(sys.argv)
 	# P01Practice_02.start(sys.argv)
@@ -126,4 +127,5 @@ if __name__ == "__main__":
 	# T01Training_09.start(sys.argv)
 	# T01Training_10.start(sys.argv)
 	# T01Training_11.start(sys.argv)
-	T01Training_12.start(sys.argv)
+	# T01Training_12.start(sys.argv)
+	# T01Training_13.start(sys.argv)
