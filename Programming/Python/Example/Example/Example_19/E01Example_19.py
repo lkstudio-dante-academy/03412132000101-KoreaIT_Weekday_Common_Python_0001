@@ -70,4 +70,33 @@ from Example.Example_19.CList_Linked import CList_Linked
 
 # Example 19 (자료구조 - 1)
 def start(args):
-	pass
+	oListValuesA = CList_Array()
+	
+	for i in range(0, 10):
+		nVal = random.randrange(1, 100)
+		oListValuesA.addVal(nVal)
+	
+	print("=====> 리스트 <=====")
+	printValues(oListValuesA)
+	
+	nVal_Insert = int(input("\n정수 입력 (추가) : "))
+	oListValuesA.insertVal(0, nVal_Insert)
+	
+	print("\n=====> 리스트 - 추가 후 <=====")
+	printValues(oListValuesA)
+	
+	nVal_Remove = int(input("\n정수 입력 (제거) : "))
+	oListValuesA.removeVal(nVal_Remove)
+	
+	print("\n=====> 리스트 - 제거 후 <=====")
+	printValues(oListValuesA)
+
+
+# 값을 출력한다
+def printValues(a_oListValues):
+	for i in range(0, a_oListValues.m_nNumValues):
+		nVal = a_oListValues.getVal(i)
+		print(f"{nVal}, ", end = "")
+	
+	print()
+	
