@@ -28,4 +28,28 @@ from Example.Example_20.CQueue import CQueue
 
 # Example 20 (자료구조 - 2)
 def start(args):
-	pass
+	oStackValues = CStack()
+	oQueueValues = CQueue()
+	
+	print("=====> 데이터 입력 순서 <=====")
+	
+	for i in range(0, 10):
+		print(f"{i + 1}, ", end = "")
+		
+		oStackValues.push(i + 1)
+		oQueueValues.enqueue(i + 1)
+	
+	print("\n\n=====> 스택 <=====")
+	
+	while not oStackValues.isEmpty():
+		nVal = oStackValues.pop()
+		print(f"{nVal}, ", end = "")
+	
+	print("\n\n=====> 큐 <=====")
+	
+	while not oQueueValues.isEmpty():
+		nVal = oQueueValues.dequeue()
+		print(f"{nVal}, ", end = "")
+	
+	print()
+	
