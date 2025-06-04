@@ -30,4 +30,157 @@ Python 연습 문제 14
 
 # Training 14
 def start(args):
-	pass
+	oExpression = input("수식 입력 : ")
+	oExpression_Postfix = infixToPostfix(oExpression)
+	
+	print(f"후위 표기법 : {oExpression_Postfix}")
+	
+	fResult = getResult(oExpression_Postfix)
+	print(f"\n결과 : {fResult}")
+
+
+# 연산자 여부를 검사한다
+def isOperator(a_oToken):
+	oOperators = "+-*/()"
+	return a_oToken in oOperators
+
+
+# 피연산자 여부를 검사한다
+def isOperand(a_oToken):
+	oOperands = "0123456789."
+	return a_oToken in oOperands
+
+
+# 우선 순위를 반환한다
+def getPriority(a_oOperator, a_bIsPush):
+	# +, - 연산자 일 경우
+	if a_oOperator == "+" or a_oOperator == "-":
+		return 2
+	
+	# *, / 연산자 일 경우
+	if a_oOperator == "*" or a_oOperator == "/":
+		return 1
+	
+	# ( 연산자 일 경우
+	if a_oOperator == "(":
+		return 0 if a_bIsPush else 4
+	
+	return 3
+
+
+# 토큰을 반환한다
+def getToken(a_oExpression, a_nIdx_Start):
+	i = a_nIdx_Start
+	oToken = ""
+	
+	while i < len(a_oExpression):
+		oToken += a_oExpression[i]
+		
+		bIsOperand = i + 1 < len(a_oExpression)
+		bIsOperand = bIsOperand and isOperand(a_oExpression[i])
+		bIsOperand = bIsOperand and isOperand(a_oExpression[i + 1])
+		
+		# 피연산자가 아닐 경우
+		if not bIsOperand:
+			break
+		
+		i += 1
+	
+	return oToken
+
+
+# 결과를 반환한다
+def getResult(a_oExpression_Postfix):
+	i = 0
+	oListOperands = []
+	
+	while i < len(a_oExpression_Postfix):
+		oToken = getToken(a_oExpression_Postfix, i)
+		i += len(oToken)
+		
+		# 공백 일 경우
+		if oToken.isspace():
+			continue
+		
+		# 피연산자 일 경우
+		if isOperand(oToken[0]):
+			oListOperands.append(float(oToken))
+		
+		# 연산자 일 경우
+		else:
+			fRhs = oListOperands.pop()
+			fLhs = oListOperands.pop()
+			
+			fResult = 0
+			
+			# + 연산자 일 경우
+			if oToken == "+":
+				fResult = fLhs + fRhs
+			
+			# - 연산자 일 경우
+			elif oToken == "-":
+				fResult = fLhs - fRhs
+			
+			# * 연산자 일 경우
+			elif oToken == "*":
+				fResult = fLhs * fRhs
+			
+			# / 연산자 일 경우
+			elif oToken == "/":
+				fResult = fLhs / fRhs
+			
+			oListOperands.append(fResult)
+	
+	return oListOperands.pop()
+
+
+# 중위 -> 후위 표기법으로 변경한다
+def infixToPostfix(a_oExpression_Infix):
+	oListOperators = []
+	oExpression_Postfix = ""
+	
+	i = 0
+	
+	while i < len(a_oExpression_Infix):
+		oToken = getToken(a_oExpression_Infix, i)
+		i += len(oToken)
+		
+		# 공백 일 경우
+		if oToken.isspace():
+			continue
+		
+		# 피연산자 일 경우
+		if isOperand(oToken[0]):
+			oExpression_Postfix += f"{oToken} "
+		
+		# ) 연산자 일 경우
+		elif oToken[0] == ")":
+			while len(oListOperators) > 0:
+				oOperator = oListOperators.pop()
+				
+				# ( 연산자 일 경우
+				if oOperator == "(":
+					break
+				
+				oExpression_Postfix += oOperator
+		
+		else:
+			while len(oListOperators) > 0:
+				oOperator = oListOperators.pop()
+				
+				nPriority_Token = getPriority(oToken, True)
+				nPriority_Operator = getPriority(oOperator, False)
+				
+				# 토큰의 우선 순위가 높을 경우
+				if nPriority_Token < nPriority_Operator:
+					oListOperators.append(oOperator)
+					break
+				
+				oExpression_Postfix += oOperator
+			
+			oListOperators.append(oToken)
+	
+	while len(oListOperators) > 0:
+		oExpression_Postfix += oListOperators.pop()
+	
+	return oExpression_Postfix
