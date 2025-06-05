@@ -46,6 +46,14 @@ Python 에서는 BeautifulSoup 라 불리는 모듈이 존재하며 해당 모�
 
 # Example 23 (웹 크롤링 - 1)
 def start(args):
+	"""
+	SSL (Security Socket Layer) 이란?
+	- 웹 브라우저와 웹 서버 간에 주고 받는 데이터를 암호화하는 프로토콜을 의미한다. (+ 즉,
+	SSL 은 보안을 위한 프로토콜이라는 것을 알 수 있다.)
+	
+	현재는 TLS (Transport Layer Security) 로 대체되었지만 관행적으로 계속 사용되고 있다. (+ 즉,
+	현재 SSL 이라고 지칭하는 것은 TLS 라는 것을 의미한다.)
+	"""
 	ssl._create_default_https_context = ssl._create_unverified_context
 	
 	"""
@@ -126,4 +134,8 @@ def compareTag(a_oTag):
 	if a_oTag.name != "img":
 		return False
 	
-	return "src" in a_oTag.attrs and "../img/gifts/img" in a_oTag.attrs["src"]
+	# src 속성이 없을 경우
+	if "src" not in a_oTag.attrs:
+		return False
+	
+	return re.match(r"\.\./img/gifts/img.*\.jpg", a_oTag.attrs["src"])
