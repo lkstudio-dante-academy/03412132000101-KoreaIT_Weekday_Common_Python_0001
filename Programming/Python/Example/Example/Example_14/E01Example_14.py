@@ -130,5 +130,5 @@ def invokeException():
 		raise Exception("예외 발생")
 	
 	finally:
-		print("finally 블럭이 실행되었습니다.")
+		print("finally 블럭이 실행 되었습니다.")
 		

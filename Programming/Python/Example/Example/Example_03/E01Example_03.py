@@ -47,7 +47,7 @@ def start(args):
 	int("10")				<- 10
 	float("3.14")			<- 3.14
 	
-	위와 같이 숫자로 이루어진 문자열이 해당 자료형 데이터로 변환된다는 것을 알 수 있다.
+	위와 같이 숫자로 이루어진 문자열이 해당 자료형 데이터로 변환 된다는 것을 알 수 있다.
 	"""
 	nValA = int(oTokens[0])
 	nValB = int(oTokens[1])
@@ -98,7 +98,7 @@ def start(args):
 	nResult = nValA if nValA >= nValB else nValB
 	
 	위의 경우 조건 연산자에 의해 nResult 변수에는 nValA 변수와 nValB 변수가 지니고 있는
-	데이터 중 큰 데이터가 할당된다는 것을 알 수 있다.
+	데이터 중 큰 데이터가 할당 된다는 것을 알 수 있다.
 	"""
 	nVal_Max = nValA if nValA >= nValB else nValB
 	

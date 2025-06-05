@@ -3,18 +3,15 @@ import 키워드란?
 - 특정 모듈을 가져오는 역할을 수행하는 키워드를 의미한다. (+ 즉, import 키워드를 활용하면 Python 이 지원하는
 다양한 모듈을 가져와서 활용하는 것이 가능하다.)
 
-Python 은 다양한 모듈을 지원하며 이러한 모듈을 활용하면 프로그램을 좀 더 수월하게 제작하는 것이 가능하다. (+ 즉,
-이미 완성 된 기능을 재활용함으로서 작성해야되는 명령문을 줄이는 것이 가능하다.)
+Python 은 다양한 모듈을 지원하며 이러한 모듈을 활용하면 프로그램을 좀 더 수월하게 제작하는 것이 가능하다.
+(+ 즉, 이미 완성 된 기능을 재활용함으로서 작성해야되는 명령문을 줄이는 것이 가능하다.)
 
 모듈 (Module) 이란?
 - 재사용 가능한 명령문을 기능적으로 분리한 단위를 의미한다. (+ 즉, 모듈을 활용하면 명령문을 재사용해서
 특정 프로그램을 빠르게 제작하는 것이 가능하다.)
 
-모듈은 프로그래밍 언어에 따라 범위가 다양하며 Python 은 명령문이 작성 된 소스 파일을 모듈이라고 지칭한다. (+ 즉,
-Python 은 소스 파일 단위로 연관 된 기능을 모듈화해서 명령문을 재사용한다는 것을 알 수 있다.)
-
-Python 명령문 시뮬레이션 사이트 URL
-- https://pythontutor.com/visualize.html
+모듈은 프로그래밍 언어에 따라 범위가 다양하며 Python 은 명령문이 작성 된 소스 파일을 모듈이라고 지칭한다.
+(+ 즉, Python 은 소스 파일 단위로 연관 된 기능을 모듈화해서 명령문을 재사용한다는 것을 알 수 있다.)
 """
 import os
 import sys
@@ -76,6 +73,7 @@ from Training.Training_12 import T01Training_12
 from Training.Training_13 import T01Training_13
 from Training.Training_14 import T01Training_14
 from Training.Training_15 import T01Training_15
+from Training.Training_16 import T01Training_16
 
 """
 메인 (Main) 모듈이란?
@@ -119,8 +117,8 @@ if __name__ == "__main__":
 	# E01Example_20.start(sys.argv)
 	# E01Example_21.start(sys.argv)
 	# E01Example_22.start(sys.argv)
-	E01Example_23.start(sys.argv)
-	# E01Example_24.start(sys.argv)
+	# E01Example_23.start(sys.argv)
+	E01Example_24.start(sys.argv)
 	# E01Example_25.start(sys.argv)
 	
 	# P01Practice_01.start(sys.argv)
@@ -147,4 +145,5 @@ if __name__ == "__main__":
 	# T01Training_13.start(sys.argv)
 	# T01Training_14.start(sys.argv)
 	# T01Training_15.start(sys.argv)
+	# T01Training_16.start(sys.argv)
 	

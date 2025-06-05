@@ -55,5 +55,5 @@ def start(args):
 				
 				oWStream.write(oByte)
 	
-	print("파일 복사가 완료되었습니다.")
+	print("파일 복사가 완료 되었습니다.")
 	
