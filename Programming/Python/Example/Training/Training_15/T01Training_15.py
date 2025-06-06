@@ -19,4 +19,25 @@ Python 연습 문제 15
 # Training 15
 def start(args):
 	ssl._create_default_https_context = ssl._create_unverified_context
+	oSearch = input("위키피디아 검색어 입력 : ")
 	
+	try:
+		oPage = urlopen(f"https://en.wikipedia.org/wiki/{oSearch}")
+		oBSoup = BeautifulSoup(oPage.read(), "html.parser")
+		
+		oCompile = re.compile(r"^(/wiki/)")
+		oListTags = oBSoup.findAll("a", { "href" : oCompile })
+		
+		with open("P_T01Training_15_01.txt", "wt") as oWStream:
+			oSetLinks = set()
+			
+			for oTag in oListTags:
+				oLink = oTag.attrs["href"]
+				oSetLinks.add(f"https://en.wikipedia.org{oLink}")
+			
+			for oLink in oSetLinks:
+				oWStream.write(f"{oLink}\n")
+	
+	except:
+		print(f"{oSearch} 검색어에 대한 페이지가 존재하지 않습니다.")
+		

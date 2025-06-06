@@ -1,6 +1,7 @@
 import os
-import re
 import sys
+
+import re
 
 """
 Python 연습 문제 16
@@ -11,4 +12,11 @@ Python 연습 문제 16
 
 # Training 16
 def start(args):
-	pass
+	oEmail = input("이메일 입력 : ")
+	print(isValid_Email(oEmail))
+	
+	
+# 이메일 유효 여부를 검사한다
+def isValid_Email(a_oEmail):
+	return bool(re.match(r"^([\d\w.+-]+)@[a-z]+\.([a-z]+)$", a_oEmail))
+	

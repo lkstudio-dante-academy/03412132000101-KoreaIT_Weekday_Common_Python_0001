@@ -5,7 +5,7 @@ import re
 import ssl
 
 from bs4 import BeautifulSoup
-from urllib.request import urlopen, Request
+from urllib.request import urlopen
 
 """
 정규 표현식 (Regular Expression) 란?
@@ -40,6 +40,8 @@ Python 은 re 모듈을 지원하며 해당 묘듈을 통해 정규 표현식을
 
 # Example 24 (웹 크롤링 - 2)
 def start(args):
+	ssl._create_default_https_context = ssl._create_unverified_context
+	
 	oText = \
 	"""
 	RegExr was created by gskinner.com.
@@ -66,11 +68,11 @@ def start(args):
 	compile 함수를 활용하면 동일한 정규 표현식을 재사용 함으로서 정규 표현식을 분석하는 시간을 줄이는 것이
 	가능하다.)
 	"""
-	oCompileA = re.compile(r"\.\./img/gifts/img.*\.jpg")
-	oListTagsA = oBSoup.findAll("img", { "src" : oCompileA })
+	oCompile = re.compile(r"\.\./img/gifts/img.*\.jpg")
+	oListTags = oBSoup.findAll("img", { "src" : oCompile })
 	
 	print("\n=====> 웹 크롤링 <=====")
 	
-	for oTag in oListTagsA:
+	for oTag in oListTags:
 		print(f"{oTag}")
 		
