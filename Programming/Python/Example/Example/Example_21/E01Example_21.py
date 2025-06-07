@@ -1,6 +1,12 @@
 import os
 import sys
 
+import random
+
+from Example.Example_21.CGraph_List import CGraph_List
+from Example.Example_21.CTable_Hash import CTable_Hash
+from Example.Example_21.CTree_BinarySearch import CTree_BinarySearch
+
 """
 비선형 자료구조 종류
 - 트리
@@ -134,4 +140,52 @@ import sys
 
 # Example 21 (자료구조 - 3)
 def start(args):
-	pass
+	oTable_Hash = CTable_Hash()
+	
+	for i in range(0, 10):
+		nVal = random.randrange(1, 100)
+		oTable_Hash.addVal(nVal)
+		
+	print("=====> 해시 테이블 <=====")
+	oTable_Hash.enumerate(lambda a_nIdx, a_nVal: print(f"{a_nIdx}:{a_nVal}, ", end = ""))
+	
+	oGraph_List = CGraph_List()
+	oGraph_List.addVertex("A")
+	oGraph_List.addVertex("B")
+	oGraph_List.addVertex("C")
+	oGraph_List.addVertex("D")
+	oGraph_List.addVertex("E")
+	oGraph_List.addVertex("F")
+	
+	oGraph_List.addEdge("A", "B")
+	oGraph_List.addEdge("A", "C")
+	oGraph_List.addEdge("A", "D")
+	
+	oGraph_List.addEdge("B", "E")
+	oGraph_List.addEdge("B", "F")
+	oGraph_List.addEdge("B", "A")
+	
+	oGraph_List.addEdge("C", "B")
+	oGraph_List.addEdge("C", "D")
+	oGraph_List.addEdge("C", "E")
+	
+	oGraph_List.addEdge("D", "F")
+	oGraph_List.addEdge("D", "A")
+	oGraph_List.addEdge("D", "B")
+	
+	oGraph_List.addEdge("E", "C")
+	oGraph_List.addEdge("E", "D")
+	oGraph_List.addEdge("E", "F")
+	
+	oGraph_List.addEdge("F", "A")
+	oGraph_List.addEdge("F", "B")
+	oGraph_List.addEdge("F", "C")
+	
+	print("\n\n=====> 그래프 - 깊이 우선 탐색 <=====")
+	oGraph_List.enumerate("A", CGraph_List.DEPTH_FIRST_SEARCH, lambda a_oKey: print(f"{a_oKey}, ", end = ""))
+	
+	print("\n\n=====> 그래프 - 너비 우선 탐색 <=====")
+	oGraph_List.enumerate("A", CGraph_List.BREADTH_FIRST_SEARCH, lambda a_oKey: print(f"{a_oKey}, ", end = ""))
+	
+	print()
+	
