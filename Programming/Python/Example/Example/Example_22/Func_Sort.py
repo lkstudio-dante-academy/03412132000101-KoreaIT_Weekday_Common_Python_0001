@@ -29,7 +29,8 @@ def sortValues_ByHeap_Internal(a_oListValues, a_nIdx, a_nNumValues):
 
 # 값을 정렬한다
 def sortValues_ByMerge(a_oListValues, a_nLeft, a_nRight):
-	pass
+	oListValues_Buffer = [0] * len(a_oListValues)
+	sortValues_ByMerge_Internal(a_oListValues, a_nLeft, a_nRight, oListValues_Buffer)
 
 
 # 값을 정렬한다
