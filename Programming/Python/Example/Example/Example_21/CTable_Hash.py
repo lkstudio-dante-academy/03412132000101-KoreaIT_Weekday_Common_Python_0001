@@ -5,7 +5,7 @@ import sys
 # 해시 테이블
 class CTable_Hash:
 	# 초기화
-	def __init__(self, a_nSize = 256):
+	def __init__(self, a_nSize = 32):
 		self.m_oContainerList = [None] * a_nSize
 		
 		for i in range(0, len(self.m_oContainerList)):

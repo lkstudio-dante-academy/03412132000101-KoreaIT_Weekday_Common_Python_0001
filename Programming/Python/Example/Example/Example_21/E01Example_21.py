@@ -5,7 +5,7 @@ import random
 
 from Example.Example_21.CGraph_List import CGraph_List
 from Example.Example_21.CTable_Hash import CTable_Hash
-from Example.Example_21.CTree_BinarySearch import CTree_BinarySearch
+from Example.Example_21.CTree_BSearch import CTree_BSearch
 
 """
 비선형 자료구조 종류
@@ -85,8 +85,8 @@ from Example.Example_21.CTree_BinarySearch import CTree_BinarySearch
 - 이진 탐색 트리는 최선의 경우 든 최악의 경우 든 O(logN) 의 성능을 보장하기 때문에 안정적이라는 장점이
 존재한다.
 
-단, 이진 탐색 트리는 균형이 무너졌을 경우 성능이 O(N) 으로 떨어지기 때문에 데이터가 추가 되거나 삭제 될 때
-균형이 무너지지 않게 추가적인 연산이 필요하다. (+ 즉, 데이터가 빈번하게 추가/삭제 될 경우 성능이 떨어진다는 것을
+단, 이진 탐색 트리는 균형이 무너졌을 경우 성능이 O(N) 으로 떨어지기 때문에 데이터가 추가 되거나 제거 될 때
+균형이 무너지지 않게 추가적인 연산이 필요하다. (+ 즉, 데이터가 빈번하게 추가/제거 될 경우 성능이 떨어진다는 것을
 알 수 있다.)
 
 반면 해시 테이블은 최선의 경우 O(1) 로 빠르게 데이터를 탐색하는 것이 가능하다. (+ 즉, 한번이 비교로
@@ -140,14 +140,41 @@ from Example.Example_21.CTree_BinarySearch import CTree_BinarySearch
 
 # Example 21 (자료구조 - 3)
 def start(args):
+	oTree_BSearch = CTree_BSearch()
+	
+	for i in range(0, 10):
+		nVal = random.randrange(1, 100)
+		oTree_BSearch.addVal(nVal)
+	
+	print("=====> 이진 탐색 트리 - 전위 순회 <=====")
+	oTree_BSearch.enumerate(CTree_BSearch.PRE_ORDER, printVal_BSearchTree)
+	
+	print("\n\n=====> 이진 탐색 트리 - 중위 순회 <=====")
+	oTree_BSearch.enumerate(CTree_BSearch.IN_ORDER, printVal_BSearchTree)
+	
+	print("\n\n=====> 이진 탐색 트리 - 후위 순회 <=====")
+	oTree_BSearch.enumerate(CTree_BSearch.POST_ORDER, printVal_BSearchTree)
+	
+	nVal_Remove = int(input("\n\n정수 입력 (제거) : "))
+	oTree_BSearch.removeVal(nVal_Remove)
+	
+	print("\n=====> 이진 탐색 트리 - 전위 순회 (제거 후) <=====")
+	oTree_BSearch.enumerate(CTree_BSearch.PRE_ORDER, printVal_BSearchTree)
+	
+	print("\n\n=====> 이진 탐색 트리 - 중위 순회 (제거 후) <=====")
+	oTree_BSearch.enumerate(CTree_BSearch.IN_ORDER, printVal_BSearchTree)
+	
+	print("\n\n=====> 이진 탐색 트리 - 후위 순회 (제거 후) <=====")
+	oTree_BSearch.enumerate(CTree_BSearch.POST_ORDER, printVal_BSearchTree)
+	
 	oTable_Hash = CTable_Hash()
 	
 	for i in range(0, 10):
 		nVal = random.randrange(1, 100)
 		oTable_Hash.addVal(nVal)
-		
-	print("=====> 해시 테이블 <=====")
-	oTable_Hash.enumerate(lambda a_nIdx, a_nVal: print(f"{a_nIdx}:{a_nVal}, ", end = ""))
+	
+	print("\n\n=====> 해시 테이블 <=====")
+	oTable_Hash.enumerate(printVal_HashTable)
 	
 	oGraph_List = CGraph_List()
 	oGraph_List.addVertex("A")
@@ -182,10 +209,25 @@ def start(args):
 	oGraph_List.addEdge("F", "C")
 	
 	print("\n\n=====> 그래프 - 깊이 우선 탐색 <=====")
-	oGraph_List.enumerate("A", CGraph_List.DEPTH_FIRST_SEARCH, lambda a_oKey: print(f"{a_oKey}, ", end = ""))
+	oGraph_List.enumerate("A", CGraph_List.DEPTH_FIRST, printVal_Graph)
 	
 	print("\n\n=====> 그래프 - 너비 우선 탐색 <=====")
-	oGraph_List.enumerate("A", CGraph_List.BREADTH_FIRST_SEARCH, lambda a_oKey: print(f"{a_oKey}, ", end = ""))
+	oGraph_List.enumerate("A", CGraph_List.BREADTH_FIRST, printVal_Graph)
 	
 	print()
+	
+	
+# 값을 출력한다
+def printVal_HashTable(a_nIdx, a_nVal):
+	print(f"{a_nIdx}:{a_nVal}, ", end = "")
+	
+	
+# 값을 출력한다
+def printVal_BSearchTree(a_nVal):
+	print(f"{a_nVal}, ", end = "")
+	
+	
+# 값을 출력한다
+def printVal_Graph(a_oKey):
+	print(f"{a_oKey}, ", end = "")
 	

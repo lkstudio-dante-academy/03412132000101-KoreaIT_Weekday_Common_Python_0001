@@ -5,8 +5,8 @@ import sys
 # 그래프
 class CGraph_List:
 	# 순서
-	DEPTH_FIRST_SEARCH = 1
-	BREADTH_FIRST_SEARCH = 2
+	DEPTH_FIRST = 1
+	BREADTH_FIRST = 2
 	
 	# 정점
 	class CVertex:
@@ -98,11 +98,11 @@ class CGraph_List:
 	# 그래프를 순회한다
 	def enumerate(self, a_tKeyStart, a_nOrder, a_oCallback):
 		# 깊이 우선 탐색 일 경우
-		if a_nOrder == CGraph_List.DEPTH_FIRST_SEARCH:
+		if a_nOrder == CGraph_List.DEPTH_FIRST:
 			self.enumerate_ByDFS(a_tKeyStart, a_oCallback)
 			
 		# 너비 우선 탐색 일 경우
-		elif a_nOrder == CGraph_List.BREADTH_FIRST_SEARCH:
+		elif a_nOrder == CGraph_List.BREADTH_FIRST:
 			self.enumerate_ByBFS(a_tKeyStart, a_oCallback)
 	
 	# 그래프를 순회한다
