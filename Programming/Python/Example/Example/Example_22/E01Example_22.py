@@ -47,7 +47,7 @@ def start(args):
 	print("\n=====> 리스트 - 정렬 후 <=====")
 	printValues(oListValues)
 	
-	nVal = int(input("\n정수 입력 : "))
+	nVal = int(input("\n정수 입력 (탐색) : "))
 	
 	nResult = findVal_ByLinear(oListValues, nVal)
 	# nResult = findVal_ByBinary(oListValues, nVal)
