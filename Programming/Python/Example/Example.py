@@ -117,10 +117,10 @@ if __name__ == "__main__":
 	# E01Example_19.start(sys.argv)
 	# E01Example_20.start(sys.argv)
 	# E01Example_21.start(sys.argv)
-	E01Example_22.start(sys.argv)
+	# E01Example_22.start(sys.argv)
 	# E01Example_23.start(sys.argv)
 	# E01Example_24.start(sys.argv)
-	# E01Example_25.start(sys.argv)
+	E01Example_25.start(sys.argv)
 	
 	# P01Practice_01.start(sys.argv)
 	# P01Practice_02.start(sys.argv)

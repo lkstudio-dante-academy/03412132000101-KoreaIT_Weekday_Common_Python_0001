@@ -59,6 +59,13 @@ class CGraph_List:
 		if oVertex == None:
 			return
 		
+		for oVertex in self.m_oListVertices:
+			# 간선 제거가 불가능 할 경우
+			if a_tKey == oVertex.m_tKey:
+				continue
+				
+			self.removeEdge(oVertex.m_tKey, a_tKey)
+		
 		self.m_oListVertices.remove(oVertex)
 
 	# 간선을 제거한다
